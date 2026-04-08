@@ -10,3 +10,4 @@ DistilBERT fine-tuned на arXiv dataset
 Ввести title и abstract → получить топ-95% тематик
 
 ## Демо
+[https://arxivstateclassificator.streamlit.app/]
