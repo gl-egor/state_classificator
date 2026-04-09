@@ -51,3 +51,8 @@ if st.button("Классификация") and (title or abstract):
     for label, prob, norm_prob in results:
         st.write(f"**{label}** — {prob:.1%}")
         st.progress(prob)
+
+if st.button("Пример классификации"):
+    st.session_state["title"] = "Attention Is All You Need"
+    st.session_state["abstract"] = "The dominant sequence transduction models..."
+    st.rerun()
