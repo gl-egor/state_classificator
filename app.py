@@ -15,8 +15,8 @@ id2label = model.config.id2label
 
 st.title("Классификатор статей arxiv")
 
-title = st.text_input("Title")
-abstract = st.text_area("Abstract")
+title = st.text_input("Title", key="title_input")
+abstract = st.text_area("Abstract", key="abstract_input")
 
 def predict(text):
     inputs = tok(text, truncation=True, max_length=256, return_tensors="pt")
@@ -53,6 +53,6 @@ if st.button("Классификация") and (title or abstract):
         st.progress(prob)
 
 if st.button("Пример классификации"):
-    st.session_state["title"] = "Attention Is All You Need"
-    st.session_state["abstract"] = "The dominant sequence transduction models..."
+    st.session_state["title_input"] = "Attention Is All You Need"
+    st.session_state["abstract_input"] = "The dominant sequence transduction models..."
     st.rerun()
